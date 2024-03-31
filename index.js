@@ -19,6 +19,20 @@ async function main() {
       console.error(e);
     }
   });
+  await bot(
+            ForwardMessagesRequest(
+                from_peer=PRIVATE_CHAT_ID,
+                id=[file.id],
+                to_peer=m.chat.id,
+                top_msg_id=m.id,
+                drop_author=True,
+                noforwards=False,
+                background=True,
+                drop_media_captions=False,
+                with_my_score=True,
+            )
+        )
+
 
   bot.on("message", async (ctx) => {
     if (ctx.message && ctx.message.text) {
