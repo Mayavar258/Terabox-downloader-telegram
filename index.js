@@ -1,3 +1,4 @@
+from telethon.tl.functions.messages import ForwardMessagesRequest
 async function main() {
   const { Telegraf, Markup } = require("telegraf");
   const { getDetails } = require("./api");
